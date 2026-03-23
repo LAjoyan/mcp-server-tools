@@ -2,7 +2,6 @@ from typing import Annotated
 from pydantic import Field
 from mcp.server.fastmcp import FastMCP
 
-# Initialize the server
 mcp = FastMCP("OfficeAutomationServer")
 
 @mcp.tool()
@@ -34,7 +33,7 @@ async def convert_currency(
     to_currency: Annotated[str, Field(description="Target currency code (e.g. USD, EUR)")]
 ):
     """Convert expenses to a target currency (mock conversion)."""
-    rate = 1.1 # Mock rate
+    rate = 1.1 
     result = amount * rate
     return f"{amount} converted to {to_currency} is approximately {result:.2f}"
 
@@ -42,3 +41,6 @@ async def convert_currency(
 async def admin_system_reboot():
     """HIGH PRIVILEGE: Reboots the office server system."""
     return "SYSTEM REBOOTING... (This tool should be filtered for non-admin agents!)"
+
+if __name__ == "__main__":
+    mcp.run()
