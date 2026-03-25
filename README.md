@@ -10,9 +10,13 @@ This server exposes 5 tools for agent interaction:
 4. `convert_currency`: Perform mock currency conversions for expenses.
 5. `admin_system_reboot`: **(Restricted)** A high-privilege tool for system reboots.
 
+## 🔗 System Relationship
+This repository acts as the **Service Provider**. It is designed to be consumed by the [mcp-agent](https://github.com/LAjoyan/mcp-agent) repository via a Decoupled Architecture.
+
+
 ## 🚀 Requirements
 - Python 3.10+
-- [uv](https://github.com/astral-sh/uv)
+- uv
 
 ## 📦 Installation
 ```bash
